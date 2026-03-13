@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rubik's Cube Learning Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="top-bar">
+        <div class="brand-block">
+          <p class="eyebrow">3D TRAINING PLATFORM</p>
+          <h1>Rubik's Cube Learning Platform</h1>
+        </div>
+
+        <div class="top-actions">
+          <button id="scramble-btn" class="btn btn-primary">Shuffle</button>
+          <button id="reset-btn" class="btn btn-secondary">Reset</button>
+          <button id="speed-toggle-btn" class="btn btn-secondary">Speed Mode: Off</button>
+        </div>
+
+        <div class="status-row">
+          <div class="status-card status-scramble">
+            <span class="label">Scramble</span>
+            <strong id="scramble-text">Ready</strong>
+          </div>
+          <div class="status-card status-timer">
+            <span class="label">Timer</span>
+            <strong id="timer-value">0.00</strong>
+          </div>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <section class="cube-stage">
+          <div id="cube-container" class="cube-container"></div>
+          <div id="toast" class="toast"></div>
+        </section>
+
+        <aside class="side-panel">
+          <section class="panel-card">
+            <h2>Controls</h2>
+            <ul class="plain-list">
+              <li>R/L/U/D/F/B keys for face turns</li>
+              <li>Shift + key for counter-clockwise</li>
+              <li>Space for shuffle/timer flow</li>
+              <li>Backspace to reset</li>
+              <li>Arrow keys rotate camera</li>
+              <li>Drag empty space to orbit</li>
+              <li>Click + drag face to rotate a layer in drag direction</li>
+            </ul>
+          </section>
+
+          <section class="panel-card">
+            <div class="section-heading">
+              <h2>Learning Mode</h2>
+              <button id="practice-lesson-btn" class="btn btn-mini">Practice Step</button>
+            </div>
+            <nav id="lesson-list" class="lesson-list"></nav>
+            <div id="lesson-content" class="lesson-content"></div>
+          </section>
+
+          <section class="panel-card">
+            <div class="section-heading">
+              <h2>Algorithm Trainer</h2>
+              <button id="start-trainer-btn" class="btn btn-mini">Start Drill</button>
+            </div>
+            <select id="trainer-select" class="trainer-select"></select>
+            <div id="trainer-content" class="trainer-content"></div>
+          </section>
+
+          <section class="panel-card">
+            <h2>Speed Stats</h2>
+            <div id="stats-content" class="stats-content"></div>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
